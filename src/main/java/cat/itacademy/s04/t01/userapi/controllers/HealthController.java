@@ -9,8 +9,8 @@ public class HealthController {
 
 
     @GetMapping("/health")
-    public String test(){
-        return "OK";
+    public StatusResponse test(){
+        return new StatusResponse("OK");
     }
 
 }
