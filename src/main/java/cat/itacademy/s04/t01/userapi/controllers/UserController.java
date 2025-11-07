@@ -15,16 +15,14 @@ public class UserController {
     @GetMapping("/users")
     public List<User> listAllUsers(@RequestParam(required = false) String name) {
         return users.stream()
-                .filter(user -> name == null || name.isBlank() || user.getName().equalsIgnoreCase(name))
+                .filter(user -> name == null || name.isBlank() || user.getName().toLowerCase().contains(name.toLowerCase()))
                 .toList();
     }
 
     @PostMapping("/users")
-    public String createUser(@RequestBody User user) {
+    public UserResponse createUser(@RequestBody User user) {
         users.add(user);
-        return "Created user with" +
-                "user name " + user.getName() + " and email " + user.getEmail()
-                + " UUID = " + user.getId() ;
+        return new UserResponse(user.getId(), user.getName(), user.getEmail());
     }
 
     @GetMapping("/users/{id}")

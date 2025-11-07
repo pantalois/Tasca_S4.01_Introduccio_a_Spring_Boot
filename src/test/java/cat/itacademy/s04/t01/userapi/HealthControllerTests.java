@@ -11,7 +11,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 // Indiquem que aquest test només carrega la capa web (controladors)
 @WebMvcTest(HealthController.class)
-class HealthControllerTest {
+class HealthControllerTests {
 
     // Injectem MockMvc, que ens permet simular peticions HTTP
     @Autowired
