@@ -1,12 +1,12 @@
 package cat.itacademy.s04.t01.userapi;
 
 
-import cat.itacademy.s04.t01.userapi.controllers.UserController;
 import cat.itacademy.s04.t01.userapi.model.User;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
@@ -18,7 +18,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 import java.util.UUID;
 
-@WebMvcTest(UserController.class)
+@SpringBootTest
+@AutoConfigureMockMvc
 class UserControllerTests {
 
     @Autowired
