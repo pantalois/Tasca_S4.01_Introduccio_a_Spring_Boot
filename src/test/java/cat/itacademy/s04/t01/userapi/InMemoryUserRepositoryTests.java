@@ -30,7 +30,6 @@ public class InMemoryUserRepositoryTests {
         user1 = new User();
         user2 = new User();
         user3 = new User();
-        UUID uuid = UUID.randomUUID();
     }
 
     @AfterEach

@@ -9,21 +9,16 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-// Indiquem que aquest test només carrega la capa web (controladors)
 @WebMvcTest(HealthController.class)
 class HealthControllerTests {
 
-    // Injectem MockMvc, que ens permet simular peticions HTTP
     @Autowired
     private MockMvc mockMvc;
 
     @Test
     void shouldReturnOkStatus() throws Exception {
-        // Simulem una petició GET a /health
         mockMvc.perform(get("/health"))
-                // Verifiquem que el codi de resposta és 200 OK
                 .andExpect(status().isOk())
-                // Comprovem que la resposta JSON conté "status": "OK"
                 .andExpect(jsonPath("$.status").value("OK"));
     }
 }
