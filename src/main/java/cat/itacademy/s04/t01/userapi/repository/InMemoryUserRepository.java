@@ -9,8 +9,8 @@ import java.util.Optional;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
-@Repository
-public class inMemoryUserRepository implements UserRepository {
+@Repository("InMemoryUserRepository")
+public class InMemoryUserRepository implements UserRepository {
 
     private final List<User> users = new ArrayList<>();
 
@@ -43,5 +43,9 @@ public class inMemoryUserRepository implements UserRepository {
     public boolean existsByEmail(String email) {
         return users.stream()
                 .anyMatch(user -> user.getEmail().equalsIgnoreCase(email));
+    }
+
+    public void clear() {
+        users.clear();
     }
 }
