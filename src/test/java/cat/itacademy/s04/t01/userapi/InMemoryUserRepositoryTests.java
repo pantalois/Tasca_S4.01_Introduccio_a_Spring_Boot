@@ -4,20 +4,18 @@ import cat.itacademy.s04.t01.userapi.model.User;
 import cat.itacademy.s04.t01.userapi.repository.InMemoryUserRepository;
 import cat.itacademy.s04.t01.userapi.repository.UserRepository;
 import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.test.context.SpringBootTest;
-import java.util.ArrayList;
-import java.util.List;
+
 import java.util.UUID;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
-public class InMemoryUserRepositoryTest {
+public class InMemoryUserRepositoryTests {
 
     private User user1;
     private User user2;

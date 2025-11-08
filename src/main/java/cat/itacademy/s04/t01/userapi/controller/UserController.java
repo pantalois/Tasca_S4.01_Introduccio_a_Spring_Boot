@@ -1,6 +1,6 @@
-package cat.itacademy.s04.t01.userapi.controllers;
+package cat.itacademy.s04.t01.userapi.controller;
 
-import cat.itacademy.s04.t01.userapi.exceptions.UserNotFoundException;
+import cat.itacademy.s04.t01.userapi.exception.UserNotFoundException;
 import cat.itacademy.s04.t01.userapi.model.User;
 import org.springframework.web.bind.annotation.*;
 
